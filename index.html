@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Applied API</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/bright/styles/screen.css">
+	<link rel="stylesheet" href="apitalk.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Applied APIs</h1>
+		<p>Patrick Heneise</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>API and API Standards</h2>
+	</div></section>
+	<section class="slide" id="fake"><div>
+		<img src="pictures/apilogo.png" alt="">
+		<img src="pictures/standards.jpg" alt="">
+		<h3>API Recommended Practice 1160</h3>
+		<h4>Managing System Integrity for Hazardous Liquid Pipelines</h4>
+		<img src="pictures/buynow.png" alt="">
+	</div></section>
+	<section class="slide cover" id="RealCover"><div>
+		<h2>Applied APIs</h2>
+		<p>by <a href="http://patrickheneise.com">Patrick Heneise</a></p>
+		<img src="pictures/iStock_000028014984Large.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>The boring, but necesary part</h2>
+		<p>The guy standing and talking: <strong>Patrick Heneise</strong>, <small>@PatrickHeneise</small></p>
+		<p>"Full Stack JavaScript Architect with a strong focus on mobile"</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2></h2>
+		<h4>Mobile Architect</h4>
+		<p>#nodejs #nosql #couchbase #couchdb #redis #elasticsearch #api #iphone #android #firefoxos #phonegap #cordova</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Why I'm standing here</h2>
+		<ul>
+			<li>3+ years in mobile</li>
+			<li>10+ years in software engineering</li>
+			<li>15+ years in web</li>
+			<li>MSc Media Technology, Universiteit Leiden, 2011</li>
+			<li>BSc Computer Science in Media, Furtwangen University, 2010</li>
+			<li>some other titles nobody cares about.</li>
+		</ul>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>The important part;</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Topics</h2>
+		<ol>
+			<li>Security & Authentication</li>
+			<li>API Types</li>
+			<li>Tracking & Analytics</li>
+			<li>Error Handling</li>
+			<li>Summary</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Security & Authentication</h2>
+		<p>Different types of authentication:</p>
+		<ul>
+			<li>OAuth2</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2></h2>
+		<p>But OAuth2 is so complicated. Can I use ...</p>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>No.</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2></h2>
+		<p>Implement OAuth2 right from the start, don't try to use anything else.
+			You'll end up with it sooner or later anyway.*</p>
+			<p><small>* Until something else comes out.</small></p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>API Types</h2>
+		<ul>
+			<li>Pulling API (REST)</li>
+			<li>Pushing API</li>
+			<li>Realtime API</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>'Pulling' REST API</h2>
+		<img src="pictures/rest.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>REST: The good</h2>
+		<ul>
+			<li>open access to your data</li>
+			<li>access/provide large amounts of data</li>
+			<li>filter and search for data</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>REST: The bad</h2>
+		<ul>
+			<li>client needs to request data</li>
+			<li>no updates</li>
+			<li>no realtime</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Example: Tumblr</h2>
+		<pre>
+			<code>Request: http://api.tumblr.com/v2/tagged?tag=gif</code>
+			<code>Response: {
+				"meta":{
+					"status":200,
+					"msg":"OK"},
+				"response":[]
+			}</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Don'ts: Tumblr</h2>
+		<pre>
+			<code>"\u003C\/p\u003E\n\u003Cp\u003ECopa del Rey\u00a0"</code>
+		</pre>
+		<blockquote>Never return nonsense.</blockquote>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Pushing API</h2>
+		<img src="pictures/pushing.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Push: The good</h2>
+		<ul>
+			<li>updates when required</li>
+			<li>best use of data</li>
+			<li>almost realtime</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Push: The bad</h2>
+		<ul>
+			<li>no filters</li>
+			<li>no searches</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Example: Instagram</h2>
+		<pre><code>curl -F 'client_id=CLIENT-ID' \
+	-F 'client_secret=CLIENT-SECRET' \
+	-F 'object=tag' \
+	-F 'aspect=media' \
+	-F 'object_id=nofilter' \
+	-F 'callback_url=http://YOUR-CALLBACK/URL' \
+	https://api.instagram.com/v1/subscriptions/</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Don'ts: Instagram</h2>
+		<pre>
+			<code>{
+  "subscription_id": "1",
+  "object": "user",
+  "object_id": "1234",
+  "changed_aspect": "media",
+  "time": 1297286541
+}</code>
+		</pre>
+		<blockquote>Never return nonsense.</blockquote>
+	</div></section>
+	<section class="slide"><div>
+		<h2>More detailed...</h2>
+		<ol>
+			<li>Response only returns the timestamp</li>
+			<li>Media is not searchable by timestamp</li>
+			<li>Go through recent media (unkown size)</li>
+			<li>Parse until you found your last processed entry</li>
+			<li>Go back to 1. when there's an update</li>
+		</ol>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/angrycat.jpg" alt="">
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/Annoyed.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Realtime Streaming API</h2>
+		<img src="pictures/gotstreams.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Streaming: The good</h2>
+		<ul>
+			<li class="next">realtime</li>
+			<li class="next">Realtime.</li>
+			<li class="next">REALTIME!</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Streaming: The bad</h2>
+		<ul>
+			<li>difficult to maintain connections over time</li>
+			<li>lots of data</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Example: Twitter</h2>
+		<pre>
+			<code>Request: https://stream.twitter.com/1.1/statuses/filter.json</code>
+			<code>Response: Full tweets</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Don'ts: Twitter</h2>
+		<p></p>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/ChoiceSign.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Think of your customers</h2>
+		<ul>
+			<li>Does it make sense to REST?</li>
+			<li>Do you need push?</li>
+			<li>Can you stream?</li>
+		</ul>
+	</div></section>
+
+
+	<section class="slide"><div>
+		<h2>Analytics & Tracking</h2>
+		<ol>
+			<li>BYOA [Booya] (Build Your Own Analytics)<br />
+			<a href="http://www.productionhacks.com/2010/07/10/redis-api-access-logger/">
+			<small>http://www.productionhacks.com/2010/07/10/redis-api-access-logger/</small></a></li>
+			<li>NewRelic<br />
+			<a href="http://newrelic.com"><small>http://newrelic.com</small></a></li>
+			<li>Google Analytics<br />
+			<a href="https://github.com/skookum/nodealytics"><small>https://github.com/skookum/nodealytics</small></a></li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Redis Tracking</h2>
+		Hit count
+		<pre><code>ZINCRBY 'api:requests:2010-07-10' 1 'users#update'</code></pre>
+
+		Increment a Sorted Set of daily “Controller#Action” values by User ID:
+		<pre><code>ZINCRBY 'api:requests:2010-06-30:users#update' 1 1337</code></pre>
+
+		Add the current date to a Set of dates for which we’re tracking data:
+		<pre><code>SADD api:requests:dates '2010-07-10'</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Big Data</h2>
+		<p>Upload your Redis database and query with Amazon Redshift or Google BigQuery</p>
+		<blockquote>Cheap, non-intrusive history without vendor lock-in.</blockquote>
+		<a href="http://www.slideshare.net/supercoco9/api-analytics-with-redis-and-google-bigquery-nosql-matters-edition">
+			<small>http://www.slideshare.net/supercoco9/api-analytics-with-redis-and-google-bigquery-nosql-matters-edition</small></a>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>NewRelic</h2>
+		<img src="pictures/newrelic.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Errors</h2>
+		<img src="pictures/working-with-idiots1.gif" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Errors</h2>
+		<p>Or: be smart, follow standards!</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Example: BrainTree API</h2>
+		<pre><code>log(error, result);</code></pre>
+		<pre><code>null, ...</code></pre>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="pictures/happy-cat.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Example: BrainTree API</h2>
+		<pre class="small"><code>{ errors:
+	{ validationErrors: {},
+		errorCollections: { merchantAccount: [Object] } },
+	params:
+	{ merchantAccount:
+			{ applicantDetails: [Object],
+				tosAccepted: 'true',
+				masterMerchantAccountId: 'xx',
+				id: 'xx' },
+		action: 'create_via_api',
+		controller: 'merchant_accounts',
+		merchantId: 'xx' },
+	message: 'Master merchant account ID is invalid.',
+	success: false }</code></pre>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="pictures/angrycat.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>The Excuse</h2>
+		<p>An invalid account ID isn't an error. <a href="https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370"><small>https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370</small></a></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Log!</h2>
+		<ul>
+			<li><a href="http://mixu.net/minilog/">http://mixu.net/minilog/</a> <small>or other log tools</small></li>
+			<li><a href="https://airbrake.io">https://airbrake.io</a></li>
+			<li><a href="https://www.getsentry.com">https://www.getsentry.com</a></li>
+			<li><a href="https://www.loggly.com">https://www.loggly.com</a></li>
+		</ul>
+	</div></section>
+
+
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
