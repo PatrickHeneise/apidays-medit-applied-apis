@@ -25,29 +25,27 @@
 	</div></section>
 	<section class="slide cover" id="RealCover"><div>
 		<h2>Applied APIs</h2>
-		<p>by <a href="http://patrickheneise.com">Patrick Heneise</a></p>
+		<p>by <a href="http://patrickheneise.com"><strong>Patrick Heneise</strong></a></p>
 		<img src="pictures/iStock_000028014984Large.jpg" alt="">
 	</div></section>
 	<section class="slide"><div>
-		<h2>The boring, but necesary part</h2>
+		<h2>The boring part</h2>
 		<p>The guy standing and talking: <strong>Patrick Heneise</strong>, <small>@PatrickHeneise</small></p>
-		<p>"Full Stack JavaScript Architect with a strong focus on mobile"</p>
+		<p>"Full Stack JavaScript Architect with a focus on mobile"</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2></h2>
 		<h4>Mobile Architect</h4>
 		<p>#nodejs #nosql #couchbase #couchdb #redis #elasticsearch #api #iphone #android #firefoxos #phonegap #cordova</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Why I'm standing here</h2>
 		<ul>
-			<li>3+ years in mobile</li>
-			<li>10+ years in software engineering</li>
-			<li>15+ years in web</li>
 			<li>MSc Media Technology, Universiteit Leiden, 2011</li>
 			<li>BSc Computer Science in Media, Furtwangen University, 2010</li>
 			<li>some other titles nobody cares about.</li>
 		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Why I'm standing here?</h2>
+		<p>Because I care about APIs.</p>
 	</div></section>
 	<section class="slide shout"><div>
 		<h2>The important part;</h2>
@@ -56,7 +54,7 @@
 		<h2>Topics</h2>
 		<ol>
 			<li>Security & Authentication</li>
-			<li>API Types</li>
+			<li>API Methodologies</li>
 			<li>Tracking & Analytics</li>
 			<li>Error Handling</li>
 			<li>Summary</li>
@@ -67,6 +65,8 @@
 		<p>Different types of authentication:</p>
 		<ul>
 			<li>OAuth2</li>
+			<li class="next">OAuth2</li>
+			<li class="next">OAuth2</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
@@ -83,11 +83,11 @@
 			<p><small>* Until something else comes out.</small></p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>API Types</h2>
+		<h2>API Methodologies</h2>
 		<ul>
-			<li>Pulling API (REST)</li>
-			<li>Pushing API</li>
-			<li>Realtime API</li>
+			<li class="next">Pulling API (REST)</li>
+			<li class="next">Pushing API</li>
+			<li class="next">Realtime API</li>
 		</ul>
 	</div></section>
 
@@ -95,12 +95,16 @@
 		<h2>'Pulling' REST API</h2>
 		<img src="pictures/rest.png" alt="">
 	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/sleeping-cat-4-wallpaper-background-hd.jpg" alt="">
+	</div></section>
 	<section class="slide"><div>
 		<h2>REST: The good</h2>
 		<ul>
 			<li>open access to your data</li>
 			<li>access/provide large amounts of data</li>
 			<li>filter and search for data</li>
+			<li>operations (POST, DELETE ...)</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
@@ -116,11 +120,11 @@
 		<pre>
 			<code>Request: http://api.tumblr.com/v2/tagged?tag=gif</code>
 			<code>Response: {
-				"meta":{
-					"status":200,
-					"msg":"OK"},
-				"response":[]
-			}</code>
+  "meta":{
+    "status":200,
+    "msg":"OK"},
+    "response":[]
+}</code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
@@ -193,7 +197,7 @@
 
 	<section class="slide"><div>
 		<h2>Realtime Streaming API</h2>
-		<img src="pictures/gotstreams.jpg" alt="">
+		<img class="next" src="pictures/gotstreams.jpg" alt="">
 	</div></section>
 	<section class="slide"><div>
 		<h2>Streaming: The good</h2>
@@ -316,7 +320,7 @@
 
 	<section class="slide"><div>
 		<h2>The Excuse</h2>
-		<p>An invalid account ID isn't an error. <a href="https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370"><small>https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370</small></a></p>
+		<p>An invalid account ID isn't a serious error. <a href="https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370"><small>https://github.com/braintree/braintree_node/issues/20#issuecomment-28726370</small></a></p>
 	</div></section>
 
 	<section class="slide"><div>
@@ -329,7 +333,45 @@
 		</ul>
 	</div></section>
 
+	<section class="slide shout"><div>
+		<h2>So many things, just for an API?</h2>
+	</div></section>
 
+	<section class="slide"><div>
+		<h2>Summary</h2>
+		<ul>
+			<li class="next">Logging: Be the first to know if there are issues</li>
+			<li class="next">Analytics: See what your users are doing</li>
+			<li class="next">Tracking: Provide data to your company</li>
+			<li class="next">Types: Provide people with what they need, not what's RESTful</li>
+			<li class="next">Security: Your customers data. Keep it safe.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Summary</h2>
+		<ul>
+			<li class="next">An API is a business asset.</li>
+			<li class="next">An API provides value.</li>
+			<li class="next">You don't just generate a REST API</li>
+			<li class="next">People rely on your API</li>
+			<li class="next">People experience your API, make it a good experience</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Questions?</h2>
+		<p>
+			Get in touch!<br />
+			<a href="http://twitter.com/PatrickHeneise">@PatrickHeneise</a><br />
+			<a href="http://themobilefirm.co">themobileform.co</a><br />
+			<a href="http://patrickheneise.com">patrickheneise.com</a>
+		</p>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Thanks</h2>
+	</div></section>
 
 	<!--
 		To hide progress bar from entire presentation

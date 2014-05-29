@@ -8,6 +8,9 @@
   src: url("./fonts/SourceSansPro-Semibold.otf") format("opentype");
 }
 
+body, html {
+  background: rgb(36, 31, 32);
+}
 
 body, html, p, a {
   font-family: "SourceSansLight" !important;
@@ -22,6 +25,7 @@ a {
   text-decoration:none !important;
   background: none;
   border: 0;
+  color: black !important;
 }
 
 small {
